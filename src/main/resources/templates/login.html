@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+</head>
+<body>
+
+<h2>欢迎来到登陆页面</h2>
+
+<!--添加学校-->
+<div>
+    <form action="/addschool" method="post">
+        <input type="text" name="scid" placeholder="scid">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="description" placeholder="description">
+        <input type="text" name="schoolWeb" placeholder="schoolWeb">
+        <input type="submit" value="添加学校">
+
+        <h2 th:utext="${msg}"></h2>   <!--添加成功-->
+        <h2 th:utext="${msg1}"></h2>
+    </form>
+</div>
+
+<!--删除学校-->
+<div>
+    <form action="/deleteschool" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="submit" value="删除学校">
+
+        <h2 th:utext="${msg2}"></h2>   <!--删除成功-->
+        <h2 th:utext="${msg3}"></h2>
+    </form>
+</div>
+
+
+<!--修改学校信息-->
+<div>
+    <form action="/updateschool" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="description" placeholder="description">
+        <input type="text" name="schoolWeb" placeholder="schoolWeb">
+        <input type="submit" value="修改学校信息">
+
+        <h2 th:utext="${msg4}"></h2>   <!--修改成功-->
+        <h2 th:utext="${msg5}"></h2>
+    </form>
+</div>
+
+
+<!--查询一个学校-->
+<div>
+    <form action="/getschool" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="submit" value="查询学校">
+
+
+        <h2 th:utext="${msg6}"></h2>   <!--查询成功-->
+        <h2 th:utext="${msg7}"></h2>
+    </form>
+</div>
+
+
+<!--得到所有学校-->
+<div>
+    <form action="/getallschool" method="post">
+        <input type="submit" value="查询所有学校">
+    </form>
+</div>
+
+</body>
+</html>
